@@ -19,8 +19,8 @@ launch4j {
     internalName = "drizzle"
 }
 
-//compileJava.options.encoding = "UTF-8"
-compileJava.options.encoding = "Windows-1251"
+compileJava.options.encoding = "UTF-8"
+//compileJava.options.encoding = "Windows-1251"
 group 'drizzle'
 version 'v0.10.4'
 
@@ -31,12 +31,16 @@ repositories {
 }
 
 sourceCompatibility = 1.8
-mainClassName = 'ru.bkmz.Main'
+mainClassName = 'ru.bkmz.etapTwo.DB.Main'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 // https://mvnrepository.com/artifact/org.apache.commons/commons-collections4
     compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+// https://mvnrepository.com/artifact/org.postgresql/postgresql
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.17'
+// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.9.RELEASE'
 
 }
 
