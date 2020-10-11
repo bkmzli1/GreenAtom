@@ -1,0 +1,20 @@
+SELECT * FROM public.sportsman;
+SELECT public.competition.competition_name, world_record FROM competition;
+SELECT public.sportsman.sportsman_name , year_of_birth FROM sportsman WHERE  year_of_birth > 1990;
+SELECT competition_name , world_record ,set_date FROM competition WHERE  set_date IN ('1118-09-04','1708-01-11');
+SELECT hold_date,city FROM result WHERE result.result = '10' ;
+SELECT sportsman_name FROM sportsman WHERE personal_record!=25;
+SELECT city FROM result WHERE result.result IN ('18', '25', '17', '9');
+SELECT sportsman_name FROM sportsman WHERE sportsman_name LIKE  'А%' AND  rank NOT IN ('3','7','9');
+SELECT hold_date FROM result WHERE city LIKE 'М%';
+SELECT competition_name FROM competition WHERE competition_name LIKE  'Доминик%';
+SELECT DISTINCT  year_of_birth FROM sportsman;
+SELECT  COUNT(result) FROM result;
+SELECT MAX(result.result) FROM result WHERE  city LIKE 'М%';
+SELECT min(year_of_birth) FROM sportsman WHERE  rank = '1';
+SELECT sportsman_name FROM sportsman JOIN result r on sportsman.sportsman_id = r.sportsman_id ;
+
+SELECT count(sportsman_name),country FROM sportsman GROUP BY country;
+UPDATE competition SET competition_name = 'ssss' WHERE competition_name LIKE 'А%';
+
+DELETE FROM  competition WHERE world_record = '20';
