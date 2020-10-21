@@ -20,6 +20,13 @@ launch4j {
 }
 
 compileJava.options.encoding = "UTF-8"
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+test {
+
+    systemProperty "file.encoding", "utf-8"
+}
 //compileJava.options.encoding = "Windows-1251"
 group 'drizzle'
 version 'v0.10.4'
@@ -31,7 +38,7 @@ repositories {
 }
 
 sourceCompatibility = 1.8
-mainClassName = 'ru.bkmz.etapTwo.DB.Main'
+mainClassName = 'ru.bkmz.etapTwo.DB.Hibernate.Main'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -41,6 +48,8 @@ dependencies {
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.17'
 // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
     compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.9.RELEASE'
+// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.22.Final'
 
 }
 
