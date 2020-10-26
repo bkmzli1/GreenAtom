@@ -1,4 +1,4 @@
-CREATE TABLE emp (
+CREATE TABLE log (
                      empname           text PRIMARY KEY,
                      salary            integer
 );
@@ -47,7 +47,7 @@ BEGIN
         RETURN NEW;
     END IF;
 END;
-$$ LANGUAGE plpgsql;
+
 
 CREATE TRIGGER emp_audit
     INSTEAD OF INSERT OR UPDATE OR DELETE ON emp_view
